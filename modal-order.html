@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Somnia Vera — Order Modal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="shortcut icon" href="/sova.png" type="image/x-icon">
+</head>
+<body class="bg-gradient-to-br from-orange-50 to-orange-100 text-gray-800 font-sans">
+
+  <nav class="bg-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 flex justify-between items-center h-16">
+      <a href="#" class="text-xl font-bold text-orange-600">Somnia Vera</a>
+      <button id="openModal" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg shadow-md transition transform hover:scale-105">
+        🛒 Order Now
+      </button>
+    </div>
+  </nav>
+
+  <!-- Modal Background -->
+  <div id="orderModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <!-- Modal Content -->
+    <div class="bg-white rounded-2xl shadow-xl w-full max-w-lg p-8 relative transform transition duration-300">
+      <!-- Close Button -->
+      <button id="closeModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+      
+      <h2 class="text-2xl font-bold text-orange-600 mb-6 text-center">Place Your Order</h2>
+      
+      <form action="/order-success.html" method="POST" class="space-y-6">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name"
+            class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500" required>
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com"
+            class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500" required>
+        </div>
+
+        <div>
+          <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder=". . ."
+            class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500" required>
+        </div>
+
+        <div>
+          <label for="service" class="block text-sm font-medium text-gray-700">Service / Product</label>
+          <select id="service" name="service"
+            class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500" required>
+            <option value="">-- Select an option --</option>
+            <option value="design">Design Service</option>
+            <option value="development">Web Development</option>
+            <option value="branding">Application Development</option>
+            <option value="branding">Server & Maintenance</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="quantity" class="block text-sm font-medium text-gray-700">Quantity</label>
+          <input type="number" id="quantity" name="quantity" min="1" value="1"
+            class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500" required>
+        </div>
+
+        <div>
+          <label for="date" class="block text-sm font-medium text-gray-700">Preferred Date</label>
+          <input type="date" id="date" name="date"
+            class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500" required>
+        </div>
+
+        <div>
+          <label for="notes" class="block text-sm font-medium text-gray-700">Additional Notes</label>
+          <textarea id="notes" name="notes" rows="4" placeholder="Any special requests or details..."
+            class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500"></textarea>
+        </div>
+
+        <div>
+          <button type="submit"
+            class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition transform hover:scale-105">
+            🛒 Place Order
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    const openModal = document.getElementById('openModal');
+    const closeModal = document.getElementById('closeModal');
+    const orderModal = document.getElementById('orderModal');
+
+    openModal.addEventListener('click', () => {
+      orderModal.classList.remove('hidden');
+      orderModal.classList.add('flex');
+    });
+
+    closeModal.addEventListener('click', () => {
+      orderModal.classList.add('hidden');
+      orderModal.classList.remove('flex');
+    });
+
+    // Close modal if clicking outside content
+    orderModal.addEventListener('click', (e) => {
+      if (e.target === orderModal) {
+        orderModal.classList.add('hidden');
+        orderModal.classList.remove('flex');
+      }
+    });
+  </script>
+
+</body>
+</html>

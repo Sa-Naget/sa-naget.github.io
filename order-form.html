@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Somnia Vera — Order Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="shortcut icon" href="/sova.png" type="image/x-icon">
+</head>
+<body class="bg-gradient-to-br from-orange-50 to-orange-100 text-gray-800 font-sans">
+
+  <header class="bg-gradient-to-r from-orange-500 to-orange-600 text-white py-8 shadow-lg">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl font-extrabold">Place Your Order</h1>
+      <p class="mt-2 text-orange-100">Fill out the form below to make a booking</p>
+    </div>
+  </header>
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="bg-white p-8 rounded-2xl shadow-xl transform transition duration-300 hover:-translate-y-1 hover:shadow-2xl">
+        <form action="/order-success.html" method="GET" class="space-y-6">
+
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="John Doe"
+              class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500" required>
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com"
+              class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500" required>
+          </div>
+
+          <div>
+            <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+62 812-3456-7890"
+              class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500" required>
+          </div>
+
+          <div>
+            <label for="service" class="block text-sm font-medium text-gray-700">Service / Product</label>
+            <select id="service" name="service"
+              class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500" required>
+              <option value="">-- Select an option --</option>
+              <option value="design">Design Service</option>
+              <option value="development">Web Development</option>
+              <option value="branding">Application Development</option>
+              <option value="branding">Server & Maintenance</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="quantity" class="block text-sm font-medium text-gray-700">Quantity</label>
+            <input type="number" id="quantity" name="quantity" min="1" value="1"
+              class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500" required>
+          </div>
+
+          <div>
+            <label for="date" class="block text-sm font-medium text-gray-700">Preferred Date</label>
+            <input type="date" id="date" name="date"
+              class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500" required>
+          </div>
+
+          <div>
+            <label for="notes" class="block text-sm font-medium text-gray-700">Additional Notes</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Any special requests or details..."
+              class="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-orange-500 focus:ring-orange-500"></textarea>
+          </div>
+
+          <div>
+            <button type="submit"
+              class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition transform hover:scale-105">
+              🛒 Place Order
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-white py-8 mt-14">
+    <div class="max-w-4xl mx-auto px-4 text-center text-sm">
+      <p>&copy; 2025 Somnia Vera. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
